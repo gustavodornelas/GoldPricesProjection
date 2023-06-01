@@ -208,7 +208,8 @@ main {
 
 #popupImportContent header,
 #popupPredictContent header,
-#popupDatabaseContent header {
+#popupDatabaseContent header,
+#popupAboutContent header {
     display: flex;
     justify-content: end;
 }

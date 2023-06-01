@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="global.css">
+    <title>Gold Prices</title>
+</head>
+
+<body>
+    <header class="mainHeader">
+        <nav>
+            <div class="menu-logo">
+                <h1 class="title">Gold Prices Projection</h1>
+            </div>
+            <ul class="nav-list">
+                <li><button id="openImportPopup" class="resetButton">Import database</button></li>
+                <li><button id="openDatabasePopup" class="resetButton">View database</button></li>
+                <li><button id="openPredictPopup" class="resetButton">Predict Values</button></li>
+                <li><button id="openAboutPopup" class="resetButton">About this Project</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="databaseContainer">
+            <header>
+                <h2>Database</h2>
+            </header>
+            <div class="databaseContent">
+                <div class="canvas">
+                    <canvas id="canvasGraficoLinha" class="canvas"></canvas>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="popupImportContainer">
+            <div id="popupImportContent">
+                <header><button id="closeImportPopup" class="resetButton">X</button></header>
+                <div class="fileImport">Import database: <input type="file" id="file-input" /> </div>
+            </div>
+        </div>
+
+        <div id="popupDatabaseContainer">
+            <div id="popupDatabaseContent">
+                <header><button id="closeDatabasePopup" class="resetButton">X</button></header>
+                Database
+                <div class="database">
+                    <table id="tabela"></table>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="popupPredictContainer">
+            <div id="popupPredictContent">
+                <header><button id="closePredictPopup" class="resetButton">X</button></header>
+                <div>
+                    Selecione a data desejada:
+                    <input type="number" name="day" id="day" style="width: 3rem;" placeholder="Dia" value="25">
+                    <input type="number" name="month" id="month" style="width: 3rem;" placeholder="Mês" value="05">
+                    <input type="number" name="year" id="year" style="width: 6rem;" placeholder="Ano" value="2023">
+                </div>
+
+                <div class="predictButtonContainer">
+                    <button id="predictButton">Predict</button>
+                </div>
+                <div>
+                    <canvas id="canvasGraficoBarra" class="canvas"></canvas>
+                </div>
+                <div class="result" id="result">
+
+                </div>
+            </div>
+        </div>
+
+            <div id="popupAboutContainer">
+                <div id="popupAboutContent">
+                    <header><button id="closeAboutPopup" class="resetButton">X</button></header>
+                    <div>
+                        <h2>This Project</h2>
+                        <p>
+                            This project was developed in order to train artificial intelligence to calculate the price
+                            of gold through a polynominal function, where coefficients were determined by a dataset that
+                            has the gold values from 1996 to 2023. <br><br>
+
+                            Dataset: <a href="https://www.kaggle.com/datasets/psycon/daily-gold-price-historical-data" target="_blank"><button class="resetButton">https://www.kaggle.com/datasets/psycon/daily-gold-price-historical-data</button></a>
+                            
+                            <br>
+                            <h2>Gold</h2>
+
+                            <p>Historically gold coinage was widely used as currency; when paper money was introduced, it typically was a receipt
+                            redeemable for gold coin or bullion. In a monetary system known as the gold standard, a certain weight of gold was given
+                            the name of a unit of currency. For a long period, the United States government set the value of the US dollar so that
+                            one troy ounce was equal to $20.67 ($0.665 per gram), but in 1934 the dollar was devalued to $35.00 per troy ounce
+                            ($0.889/g). By 1961, it was becoming hard to maintain this price, and a pool of US and European banks agreed to
+                            manipulate the market to prevent further currency devaluation against increased gold demand.</p>
+                            <br>
+
+                            <h3>Gustavo Dornelas - Instituto Federal do Triangulo Mineiro</h3>
+                        </p>
+                    </div>
+                </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="xlsx.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
